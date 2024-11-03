@@ -47,14 +47,17 @@ function numberfordice() {
 function reset() {
      currentScore = 0;
  currentScore2 = 0;
+ scorep1=0
+ scorep2=0
  isPlayer1Turn = true; 
  var player1 = prompt("Enter First Player's name");
-var player2 = prompt("Enter Second Player's name");
-console.log(`${player1} and ${player2} are Playing!`);
-
-document.getElementById('player1name').innerText = player1;
-document.getElementById('player2name').innerText = player2;
-
+ var player2 = prompt("Enter Second Player's name");
+ console.log(`${player1} and ${player2} are Playing!`);
+ 
+ document.getElementById('player1name').innerText = player1;
+ document.getElementById('player2name').innerText = player2;
+ document.getElementsByClassName('scorep1')[0].innerText = scorep1; 
+ document.getElementsByClassName('scorep2')[0].innerText = scorep1; 
  document.getElementsByClassName('currentscorep1')[0].innerText = currentScore;
  document.getElementsByClassName('currentscorep2')[0].innerText = currentScore2;
  
@@ -83,7 +86,7 @@ function hold() {
         if(scorep2>=100){
             document.getElementsByClassName('scorep2')[0].innerText = scorep2; 
             alert(`${player2} has won`)
-            reset()
+            reset();
             return
         }
         isPlayer1Turn = true;
