@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(to right top, #e00d0d, #d60023, #cb0031, #bd003c, #ae0b44);
+}
+
+.container1 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.MainGameArea {
+    height: 70vh; /* Adjusted height */
+    width: 90vw; /* Adjusted width for smaller screens */
+    background-color: rgb(218, 214, 244);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Space between players */
+}
+
+.player1area,
+.player2area {
+    flex: 1; /* Allow players to share available space */
+    border: 1px solid blue; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px; /* Added padding for better spacing */
+}
+
+.p1TextAndScore, .p2TextAndScore {
+    text-align: center;
+    width: 100%; /* Full width for responsive design */
+}
+
+.player1name, .player2name {
+    font-size: 5vw; /* Responsive font size */
+}
+
+.scorep1, .scorep2 {
+    color: #bd003c;
+    font-size: 8vw; /* Responsive font size */
+}
+
+.p1CurrentScore, .p2CurrentScore {
+    width: 80%; /* Full width for better responsiveness */
+    height: 20%;
+    text-align: center;
+    font-size: 1.5em; /* Fixed font size */
+    border-radius: 10px;
+    padding-top: 5px;
+    background-color: #bd003c;
+    color: white;
+}
+
+.currentscorep1, .currentscorep2 {
+    padding-top: 10px;
+    font-size: 5vw; /* Responsive font size */
+}
+
+.activeplayer {
+    background-color: #c96b7f;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; /* Center buttons horizontally */
+    align-items: center; /* Center buttons vertically */
+    width: 90%; /* Full width */
+    margin-top: 20px; /* Added margin for spacing */
+    flex-wrap: wrap; /* Allow buttons to wrap */
+}
+
+.button {
+    flex: 1; /* Allow buttons to share available space */
+    max-width: 200px; /* Limit max width */
+    margin: 5px; /* Margin between buttons */
+    height: 50px; /* Fixed height */
+    border-radius: 25px; /* More rounded corners */
+    font-size: 3vw; /* Responsive font size */
+}
+
+.button:hover {
+    background-color: rgb(225, 199, 235);
+    cursor: pointer;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .MainGameArea {
+        flex-direction: column; /* Stack players vertically on smaller screens */
+    }
+    .player1area, .player2area {
+        width: 90%; /* Full width on small screens */
+        margin: 10px 0; /* Margin between player areas */
+    }
+}
